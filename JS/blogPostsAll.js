@@ -11,18 +11,18 @@ const responseAll = await fetch(url + allPosts);
 
         console.log(testTwo);
 
-        testTwo.forEach(function(blabla){
-            console.log(blabla.id)
+        testTwo.forEach(function(allPosts){
+            console.log(allPosts.id)
 
 
 
             allPostsContainer.innerHTML += `
             <div class="grid-item">
-                  <h3>${blabla.title.rendered}</h3>
-                <h6>${blabla.date}</h6>
-                <div class="description"${blabla.excerpt.rendered}</div>
-                <p><a href="blogpost.html?id=${blabla.id}">READ MORE</a></p>
-                <img class="front"src="${blabla.jetpack_featured_media_url}"</img></ul>
+                  <h5 style="height:30px;">${allPosts.title.rendered}</h5>
+                <h6 style="height:20px;">${allPosts.date}</h6>
+                <div class="description"${allPosts.excerpt.rendered}</div>
+                <img class="front"src="${allPosts.jetpack_featured_media_url}"</img></ul>
+                <p><a href="blogpost.html?id=${allPosts.id}">READ POST</a></p>
                 </div>
                 `;})
 

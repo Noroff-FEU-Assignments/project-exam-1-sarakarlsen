@@ -27,7 +27,8 @@ async function fetchInfo() {
     }
 
     function createHTML(info) {
-        detailContainer.innerHTML += `<div class="card">
+        detailContainer.innerHTML += `<div class="post-content">
+        <p>${info.date}</p>
         <h1>${info.title.rendered}</h1>
         ${info.content.rendered}</div>`
         
