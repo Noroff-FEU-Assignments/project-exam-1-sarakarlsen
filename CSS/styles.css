@@ -96,7 +96,6 @@ li.left-nav {
 
 .post-content {
 
-    width: 800px;
     background-color: #F5F7EF; 
     text-align: center;
     padding: 20px;
@@ -348,10 +347,16 @@ input[type=text] {
     display: grid;
     grid-template-columns: 400px 400px 400px;
 
-    
-
-    
-
-
 }
+
+    .post-content {
+
+        width: 800px;
+
+    
+    }
+    
+
+
+
 }
