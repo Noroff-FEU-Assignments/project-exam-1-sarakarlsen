@@ -1,9 +1,9 @@
 const postsContainer = document.querySelector(".container");
 const postsContainerCat = document.querySelector(".test-container");
 
-const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + url;
-
 const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
+
+const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + url;
 
 const postsIndex = "per_page=5";
 const postsCat = "categories=19";
