@@ -11,7 +11,7 @@ console.log(id);
 
 async function fetchInfo() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(url_api);
         const info = await response.json();
         
         console.log(info);
