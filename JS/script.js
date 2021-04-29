@@ -3,8 +3,6 @@ const postsContainerCat = document.querySelector(".test-container");
 
 const url = "tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
 
-const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + url;
-
 const postsIndex = "per_page=5";
 const postsCat = "categories=19";
 
@@ -14,7 +12,7 @@ const postsCat = "categories=19";
 
 
 async function callApi() {
-  const response = await fetch(corsEnabledUrl + postsIndex);
+  const response = await fetch(url + postsIndex);
   const json = await response.json();
 
   console.log(json);
