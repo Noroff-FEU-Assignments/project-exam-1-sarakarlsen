@@ -10,6 +10,10 @@
     margin: 0 auto;
 }
 
+header {
+    position: fixed;
+}
+
 h4.top-header {
     text-align: center;
     padding-bottom: 15px;
@@ -230,8 +234,7 @@ img {
 }
 
 .post-content img {
-    width: 600px;
-    height: 100%
+    width: 100%
 }
 
 .container-post {
