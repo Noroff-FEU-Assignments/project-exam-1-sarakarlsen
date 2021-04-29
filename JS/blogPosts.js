@@ -4,16 +4,14 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 
-const url_api = "tsh.olx.mybluehost.me/wp-json/wp/v2/posts/" + id;
-const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + url_api;
-
+const url_api = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts/" + id;
 console.log(url_api);
 
 console.log(id);
 
 async function fetchInfo() {
     try {
-        const response = await fetch(corsEnabledUrl);
+        const response = await fetch(url);
         const info = await response.json();
         
         console.log(info);
