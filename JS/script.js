@@ -14,7 +14,7 @@ const postsCat = "categories=19";
 
 
 async function callApi() {
-  const response = await fetch(url + postsIndex);
+  const response = await fetch(corsEnabledUrl + postsIndex);
   const json = await response.json();
 
   console.log(json);
