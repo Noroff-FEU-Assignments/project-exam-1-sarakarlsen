@@ -1,7 +1,7 @@
 const postsContainer = document.querySelector(".container");
 const postsContainerCat = document.querySelector(".test-container");
 
-const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
+const url = "wp-json/wp/v2/posts?";
 
 const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + url;
 
