@@ -229,6 +229,11 @@ img {
     text-align: start;
 }
 
+.post content img {
+    width: 600px;
+    height: 100%
+}
+
 .container-post {
     background-color: #F5F7EF;
     margin: 10px;
