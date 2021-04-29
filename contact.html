@@ -21,11 +21,11 @@
       <ul>
         <li class="left-nav"><a href="index.html">Home</a></li>
         <li class="left-nav"><a href="index.html">About</a></li>
-         <li><a href="myhome.html"></a>My home</li> /
-        <li><a href="projects.html">Projects</a></li> /
-        <li><a class="current"href="contact.html">Interior</a></li> /
-        <li><a href="contact.html">Garden</a></li> /
-        <li><a href="allposts.html">All Posts</a></li>
+        <li><a href="myhome.html">My home</a><p class="hidden">/</p></li> 
+        <li><a href="projects.html">Projects</a><p class="hidden">/</p></li> 
+        <li><a href="contact.html">Interior</a><p class="hidden">/</p></li> 
+        <li><a href="contact.html">Garden</a><p class="hidden">/</p></li> 
+        <li><a href="allposts.html">All Posts</a></li> 
         <li class="search"><input type="text" placeholder="Search.."><i class="far fa-search"></i></li>
       </ul>
     </nav>
@@ -33,29 +33,32 @@
 <body>
     <hr class="solid">
   <h1>CONTACT</h1>
-  <div class="container">
+  <div class="containerForm">
     <form class="contactForm">
-        <label>
+        <label class="form">
             Name (required)
-            <input name="fullName" id="fullName" />
+            <input class="form" name="fullName" id="fullName" />
         </label>
         <div class="form-error" id="fullNameError"> Name must be at least 5 characters</div>
-        <label>
+        <label class="form">
             Email (required)
-            <input name="email" id="email" />
+            <input class="form" name="email" id="email" />
         </label>
         <div class="form-error" id="emailError">Please enter a valid email address</div>
-        <label>Subject
-            <input name="subject" id="subject" />
+        <label class="form">
+          Subject
+            <input class="form" name="subject" id="subject" />
         </label>
         <div class="form-error" id="subjectError">Subject must be at least 15 characters</div>
-        <label> Text (min. 25 characters)
-            <input name="textarea" id="textarea" />
+        <label class="form"> 
+          Text (min. 25 characters)
+            <input class="form" name="textarea" id="textarea" />
         </label>
         <div class="form-error" id="textError">Please fill in at least 25 characters</div>
         <button class="button" id="validate-btn"> SUBMIT</button>
     </form>
 </div>
+<hr class="solid">
 <footer>
     <div class="row">
       <div class="column">

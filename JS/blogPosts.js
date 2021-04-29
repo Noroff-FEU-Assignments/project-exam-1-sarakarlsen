@@ -26,10 +26,12 @@ async function fetchInfo() {
     }
 
     function createHTML(info) {
-        detailContainer.innerHTML += `<div class="post-content">
-        <p>${info.date}</p>
-        <h1>${info.title.rendered}</h1>
-        ${info.content.rendered}</div>`
+        detailContainer.innerHTML += `
+        <h3 style="text-align:center;">${info.title.rendered}</h3>
+        <div class="post-content">
+        <h6>${info.date}</h6> <br>
+        ${info.content.rendered}
+        </div>`
         
         console.log(info.content.rendered);
         }

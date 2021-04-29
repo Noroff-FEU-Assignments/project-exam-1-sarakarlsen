@@ -29,9 +29,9 @@ async function callApi() {
       postsContainer.innerHTML += `<div class="container-post">
           <ul class="flex-item">
           <h3>${result.title.rendered}</h3>
-          <h6>${result.date}</h6>
+          <h6 style="padding-left:20px;">${result.date}</h6>
           <div class="description"${result.excerpt.rendered}</div>
-          <p><a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a></p>
+          <a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a>
           </ul>
           <ul class="flex-item">
           <img class="front"src="${result.jetpack_featured_media_url}"</img></ul>
@@ -50,7 +50,7 @@ async function callApi() {
       postsContainer.innerHTML += `<div class="container-post" style="display:none">
           <ul class="flex-item">
           <h3>${result.title.rendered}</h3>
-          <h6>${result.date}</h6>
+          <h6 style="padding-left:20px;">${result.date}</h6>
           <div class="description"${result.excerpt.rendered}</div>
           <p><a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a></p>
           </ul>
