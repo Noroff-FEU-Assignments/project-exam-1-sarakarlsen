@@ -1,13 +1,11 @@
 const allPosts = "per_page=15";
-const url = "tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
+const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
 const allPostsContainer = document.querySelector(".grid-container");
-
-const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + url;
 
 
 async function callApiAll() {
 
-const responseAll = await fetch(corsEnabledUrl + allPosts);
+const responseAll = await fetch(url+ allPosts);
         const testTwo = await responseAll.json();
 
 
