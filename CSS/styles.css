@@ -247,6 +247,12 @@ img {
     position: relative;
 }
 
+.about-container {
+    width: 100%;
+    background-color: lawngreen;
+
+}
+
 input {
     font-family: inherit;
     padding: 12px;
