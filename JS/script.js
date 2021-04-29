@@ -121,6 +121,7 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("container-post");
@@ -138,11 +139,10 @@ function showSlides(n) {
 
 }
 
-setNewImage() 
 
-const photos = document.querySelectorAll("img");
 
-console.log(photos);
+
+
 
 
 
