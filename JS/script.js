@@ -1,7 +1,8 @@
 const postsContainer = document.querySelector(".container");
 const postsContainerCat = document.querySelector(".test-container");
 
-const url = "tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
+const url = "https:/tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
+
 
 const postsIndex = "per_page=5";
 const postsCat = "categories=19";
