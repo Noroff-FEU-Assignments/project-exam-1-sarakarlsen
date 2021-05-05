@@ -11,6 +11,11 @@
    
 }
 
+.favicon {
+    image-rendering: auto;
+
+}
+
 
 
 h1, header {
