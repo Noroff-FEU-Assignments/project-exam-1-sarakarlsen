@@ -80,5 +80,3 @@ function validateEmail(email) {
   const emailMatches = someSigns.test(email);
   return emailMatches;
 }
-
-

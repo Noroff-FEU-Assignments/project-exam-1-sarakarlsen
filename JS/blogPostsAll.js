@@ -18,10 +18,10 @@ const responseAll = await fetch(url+ allPosts);
 
             allPostsContainer.innerHTML += `
             <div class="grid-item">
-                  <h5 style="height:30px;">${allPosts.title.rendered}</h5>
+                  <h4 style="height:80px;">${allPosts.title.rendered}</h4>
                 <h6 style="height:20px;">${allPosts.date}</h6>
                 <div class="description"${allPosts.excerpt.rendered}</div>
-                <img class="front"src="${allPosts.jetpack_featured_media_url}"</img></ul>
+                <img src="${allPosts.jetpack_featured_media_url}"</img></ul>
                 <p><a href="blogpost.html?id=${allPosts.id}">READ POST</a></p>
                 </div>
                 `;})

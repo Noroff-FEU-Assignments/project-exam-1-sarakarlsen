@@ -6,6 +6,8 @@
   <meta name="description"
     content="This is a website and blog founded in Oslo, Norway. We share our passion and interests for interior design. " />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel ="icon" href="Images/msicon.svg" type=“image/x-icon” />
+  <link rel =“shortcut-icon” href="Images/msicon.svg" type =“image/x-icon”/>
   <link rel="stylesheet" href="CSS/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
@@ -28,44 +30,44 @@
 <body>
   <a href="index.html"><h2 class="logo" alt="Monochrome spaces logo">Monochrome Spaces</h2></a>
   <h4 class="top-header">A blog about interior and garden design</h4>
-  <header class="header">
+  <header class="header" id="headermain">
     <a name="top"></a>
     <input type="checkbox" id="hamburger-menu">
     <nav>
       <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <ul>
         <li class="left-nav"><a class="current" href="index.html">Home</a></li>
-        <li class="left-nav"><a href="index.html">About</a></li>
+        <li class="left-nav"><a href="about.html">About</a></li>
          <li><a href="myhome.html">My home</a><p class="hidden">/</p></li> 
         <li><a href="projects.html">Projects</a><p class="hidden">/</p></li> 
         <li><a href="contact.html">Interior</a><p class="hidden">/</p></li> 
-        <li><a href="contact.html">Garden</a><p class="hidden">/</p></li> 
+        <li><a href="garden.html">Garden</a><p class="hidden">/</p></li> 
         <li><a href="allposts.html">All Posts</a></li> 
         <li class="search"><input type="text" placeholder="Search.."><label for="search-icon"><i class="far fa-search"></i></label></li>
       </ul>
     </nav>
   </header>
+  <div class="main">
   <hr class="solid">
   <h1>THE LATEST</h1>
   <div class="container">
-    <a class="prev" onclick="plusSlides(-1)"><i class="far fa-chevron-left"></i></a>
-    <a class="next" onclick="plusSlides(1)"><i class="far fa-chevron-right"></i></a>
+    <a class="prev" aria-label="Previous slide" tabindex=0 onclick="plusSlides(-1)"><i class="far fa-chevron-left"></i></a>
+    <a class="next" aria-label="Next slide" tabindex=0 onclick="plusSlides(1)"><i class="far fa-chevron-right"></i></a>
   </div>
   <div class="dots" style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
-    <span class="dot" onclick="currentSlide(4)"></span> 
-    <span class="dot" onclick="currentSlide(5)"></span> 
+    <a class="dot" aria-label="First slide" tabindex=0 onclick="currentSlide(1)"></a> 
+    <a class="dot" aria-label="Second slide" tabindex=0 onclick="currentSlide(2)"></a> 
+    <a class="dot" aria-label="Third slide" tabindex=0 onclick="currentSlide(3)"></a> 
+    <a class="dot" aria-label="Fourth slide" tabindex=0 onclick="currentSlide(4)"></a> 
+    <a class="dot" aria-label="Fifth slide" tabindex=0 onclick="currentSlide(5)"></a> 
   </div>
 </div>
 <hr class="solid">
 <h1>PROJECTS</h1>
-<div class="test-container">
+<div class="grid-container">
 </div>
-
 <hr class="solid">
-<div class="main">
+  <div class="insta"></div>
 </div>
   <footer>
     <div class="row">

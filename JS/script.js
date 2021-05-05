@@ -1,13 +1,12 @@
+
 const postsContainer = document.querySelector(".container");
-const postsContainerCat = document.querySelector(".test-container");
+const postsContainerCat = document.querySelector(".grid-container");
+
 
 const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
 
 const postsIndex = "per_page=5";
 const postsCat = "categories=19";
-
-
-
 
 
 
@@ -23,6 +22,9 @@ async function callApi() {
   console.log(categories);
 
 
+
+
+
   json.forEach(function (result, index) {
 
     if (index === 0) {
@@ -33,8 +35,7 @@ async function callApi() {
           <div class="description"${result.excerpt.rendered}</div>
           <a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a>
           </ul>
-          <ul class="flex-item">
-          <img class="front"src="${result.jetpack_featured_media_url}"</img></ul>
+          <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
           </div>`;
 
       console.log(result.id);
@@ -52,10 +53,9 @@ async function callApi() {
           <h3>${result.title.rendered}</h3>
           <h6 style="padding-left:20px;">${result.date}</h6>
           <div class="description"${result.excerpt.rendered}</div>
-          <p><a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a></p>
+          <a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a>
           </ul>
-          <ul class="flex-item">
-          <img src="${result.jetpack_featured_media_url}"</img></ul>
+          <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
           </div>`;
 
 
@@ -73,11 +73,11 @@ async function callApi() {
 
     if (index <= 2) {
 
-      postsContainerCat.innerHTML += `<div class="categories-container">
+      postsContainerCat.innerHTML += `<div class="grid-item">
                 <ul>
-                <h3>${category.title.rendered}</h3>
                 <img src="${category.jetpack_featured_media_url}"</img>
-                <a href="blogpost.html?id=${category.id}"><button class="button">READ POST</buttton></a>
+                <h4>${category.title.rendered}</h4>
+                <a href="blogpost.html?id=${category.id}"><button class="button"id="dark">READ POST</buttton></a>
                 </ul>
                 </div>`
 
@@ -87,10 +87,9 @@ async function callApi() {
     else {
       postsContainerCat.innerHTML += ``;
     }
+
+
   })
-
-    ;
-
 
 
 
@@ -99,13 +98,7 @@ async function callApi() {
 
 
 
-
-
 callApi();
-
-
-
-
 
 
 var slideIndex = 1;
@@ -123,6 +116,7 @@ function currentSlide(n) {
 
 
 function showSlides(n) {
+
   var i;
   var slides = document.getElementsByClassName("container-post");
   var dots = document.getElementsByClassName("dot");
@@ -138,28 +132,6 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
