@@ -1,34 +1,31 @@
-const allPosts = "per_page=15";
 const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
+const allPosts = "per_page=15";
 const allPostsContainer = document.querySelector(".grid-container");
+const loaderContainer = document.querySelector(".posts");
 
+async function getAllPosts() {
+  const responseAll = await fetch(url + allPosts);
+  const jsonAll = await responseAll.json();
 
-async function callApiAll() {
+  console.log(jsonAll);
 
-const responseAll = await fetch(url+ allPosts);
-        const testTwo = await responseAll.json();
+  loaderContainer.innerHTML = ``;
 
+  jsonAll.forEach(function (allPosts) {
+    console.log(allPosts.categories);
 
-        console.log(testTwo);
-
-        testTwo.forEach(function(allPosts){
-            console.log(allPosts.id)
-
-
-
-            allPostsContainer.innerHTML += `
+    allPostsContainer.innerHTML += `
             <div class="grid-item">
-                  <h4 style="height:80px;">${allPosts.title.rendered}</h4>
+                  <h3>${allPosts.title.rendered}</h3>
                 <h6 style="height:20px;">${allPosts.date}</h6>
+                <a href="categories.html?id=${allPosts.categories}">test</a>
                 <div class="description"${allPosts.excerpt.rendered}</div>
                 <img src="${allPosts.jetpack_featured_media_url}"</img></ul>
                 <p><a href="blogpost.html?id=${allPosts.id}">READ POST</a></p>
                 </div>
-                `;})
-
-    
-
+                </div>
+                `;
+  });
 }
 
-
-callApiAll();
+getAllPosts();

@@ -28,7 +28,6 @@
 
 <body>
   <a href="index.html"><h2 class="logo" alt="Monochrome spaces logo">Monochrome Spaces</h2></a>
-  <h4 class="top-header">A blog about interior and garden design</h4>
   <header class="header" id="headermain">
     <a name="top"></a>
     <input type="checkbox" id="hamburger-menu">
@@ -37,10 +36,9 @@
       <ul>
         <li class="left-nav"><a class="current" href="index.html">Home</a></li>
         <li class="left-nav"><a href="about.html">About</a></li>
-         <li><a href="myhome.html">My home</a><p class="hidden">/</p></li> 
-        <li><a href="projects.html">Projects</a><p class="hidden">/</p></li> 
-        <li><a href="contact.html">Interior</a><p class="hidden">/</p></li> 
-        <li><a href="garden.html">Garden</a><p class="hidden">/</p></li> 
+         <li><a href="categories.html?id=19">My home</a><p class="hidden">/</p></li> 
+        <li><a href="categories.html?id=20">Projects</a><p class="hidden">/</p></li> 
+        <li><a href="categories.html?id=21">Garden</a><p class="hidden">/</p></li> 
         <li><a href="allposts.html">All Posts</a></li> 
         <li class="search"><input type="text" placeholder="Search.."><label for="search-icon"><i class="far fa-search"></i></label></li>
       </ul>
@@ -48,21 +46,20 @@
   </header>
   <div class="main">
   <hr class="solid">
-  <h1>THE LATEST</h1>
+  <h1 class="title">THE LATEST</h1>
   <div class="container">
-    <a class="prev" aria-label="Previous slide" tabindex=0 onclick="plusSlides(-1)"><i class="far fa-chevron-left"></i></a>
-    <a class="next" aria-label="Next slide" tabindex=0 onclick="plusSlides(1)"><i class="far fa-chevron-right"></i></a>
+    <div class="loader"></div>
   </div>
   <div class="dots" style="text-align:center">
-    <a class="dot" aria-label="First slide" tabindex=0 onclick="currentSlide(1)"></a> 
-    <a class="dot" aria-label="Second slide" tabindex=0 onclick="currentSlide(2)"></a> 
-    <a class="dot" aria-label="Third slide" tabindex=0 onclick="currentSlide(3)"></a> 
-    <a class="dot" aria-label="Fourth slide" tabindex=0 onclick="currentSlide(4)"></a> 
-    <a class="dot" aria-label="Fifth slide" tabindex=0 onclick="currentSlide(5)"></a> 
+    <a class="dot" aria-label="First slide" tabindex=0 onclick="displaySlideWithIndex(1)"></a> 
+    <a class="dot" aria-label="Second slide" tabindex=0 onclick="displaySlideWithIndex(2)"></a> 
+    <a class="dot" aria-label="Third slide" tabindex=0 onclick="displaySlideWithIndex(3)"></a> 
+    <a class="dot" aria-label="Fourth slide" tabindex=0 onclick="displaySlideWithIndex(4)"></a> 
+    <a class="dot" aria-label="Fifth slide" tabindex=0 onclick="displaySlideWithIndex(5)"></a> 
   </div>
 </div>
 <hr class="solid">
-<h1>PROJECTS</h1>
+<h1 class="title">PROJECTS</h1>
 <div class="grid-container">
 </div>
 <hr class="solid">

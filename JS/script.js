@@ -1,152 +1,126 @@
-
 const postsContainer = document.querySelector(".container");
-const postsContainerCat = document.querySelector(".grid-container");
-
+const categoriesContainer = document.querySelector(".grid-container");
+const slides = document.getElementsByClassName("container-post");
+const dots = document.getElementsByClassName("dot");
 
 const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
 
-const postsIndex = "per_page=5";
-const postsCat = "categories=19";
+const perPage = "per_page=5";
+const postCategory = "categories=19";
 
+let currentSlide = 1;
 
-
-async function callApi() {
-  const response = await fetch(url + postsIndex);
+async function getPosts(postsContainer) {
+  const response = await fetch(url + perPage);
   const json = await response.json();
 
-  console.log(json);
+  console.log("PostsSlides", json);
 
-  const responseCat = await fetch(url + postsCat);
-  const categories = await responseCat.json();
-
-  console.log(categories);
-
-
-
-
+  postsContainer.innerHTML = ``;
 
   json.forEach(function (result, index) {
-
     if (index === 0) {
-      postsContainer.innerHTML += `<div class="container-post">
-          <ul class="flex-item">
-          <h3>${result.title.rendered}</h3>
-          <h6 style="padding-left:20px;">${result.date}</h6>
-          <div class="description"${result.excerpt.rendered}</div>
-          <a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a>
-          </ul>
-          <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
+      postsContainer.innerHTML += `
+      <a class="prev" aria-label="Previous slide" tabindex=0 onclick="previousSlide(-1)"><i class="far fa-chevron-left"></i></a>
+      <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
+          <div class="container-post">
+            <ul class="flex-item">
+              <h1>${result.title.rendered}</h1>
+              <h6 style="padding-left:20px;">${result.date}</h6>
+              <div class="description">${result.excerpt.rendered}</div>
+              <a href="blogpost.html?id=${result.id}">
+                <button class="button">READ POST</buttton>
+              </a>
+            </ul>
+            <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
           </div>`;
-
-      console.log(result.id);
-
-
+    } else {
+      postsContainer.innerHTML += `
+        <div class="container-post" style="display:none">
+            <ul class="flex-item">
+              <h1>${result.title.rendered}</h1>
+              <h6 style="padding-left:20px;">${result.date}</h6>
+              <div class="description"${result.excerpt.rendered}</div>
+              <a href="blogpost.html?id=${result.id}">
+                <button class="button">READ POST</buttton>
+              </a>
+            </ul>
+            <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
+        </div>`;
     }
+    console.log("PostId:", result.id);
+  });
+}
 
-    else {
+async function getProjects(categoriesContainer) {
+  const responseCat = await fetch(url + postCategory);
+  const categories = await responseCat.json();
 
-
-
-
-      postsContainer.innerHTML += `<div class="container-post" style="display:none">
-          <ul class="flex-item">
-          <h3>${result.title.rendered}</h3>
-          <h6 style="padding-left:20px;">${result.date}</h6>
-          <div class="description"${result.excerpt.rendered}</div>
-          <a href="blogpost.html?id=${result.id}"><button class="button">READ POST</buttton></a>
-          </ul>
-          <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
-          </div>`;
-
-
-
-
-    };
-
-  })
-
-
-
-
+  console.log("Categories:", categories);
 
   categories.forEach(function (category, index) {
-
     if (index <= 2) {
-
-      postsContainerCat.innerHTML += `<div class="grid-item">
-                <ul>
+      categoriesContainer.innerHTML += `
+            <div class="grid-item">
+              <ul>
                 <img src="${category.jetpack_featured_media_url}"</img>
-                <h4>${category.title.rendered}</h4>
-                <a href="blogpost.html?id=${category.id}"><button class="button"id="dark">READ POST</buttton></a>
-                </ul>
-                </div>`
-
-      console.log(category.id);
+                <h3>${category.title.rendered}</h3>
+                <a href="blogpost.html?id=${category.id}">
+                  <button class="button"id="dark">READ POST</buttton>
+                </a>
+              </ul>
+            </div>`;
+      console.log("CategoryId:", category.id);
+    } else {
+      categoriesContainer.innerHTML += ``;
     }
-
-    else {
-      postsContainerCat.innerHTML += ``;
-    }
-
-
-  })
-
-
-
+  });
 }
 
-
-
-
-callApi();
-
-
-var slideIndex = 1;
-
-showSlides(slideIndex);
-
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function nextSlide() {
+  if (currentSlide + 1 > slides.length) {
+    currentSlide = 1;
+  } else {
+    currentSlide += 1;
+  }
+  displaySlideWithIndex(currentSlide);
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function previousSlide() {
+  if (currentSlide - 1 < 1) {
+    currentSlide = slides.length;
+  } else {
+    currentSlide -= 1;
+  }
+  displaySlideWithIndex(currentSlide);
 }
 
-
-function showSlides(n) {
-
-  var i;
-  var slides = document.getElementsByClassName("container-post");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
+function hideAllSlides() {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "flex";
-  dots[slideIndex - 1].className += " active";
-
 }
 
+function resetAllDots() {
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+}
 
+function activateSlideAndDotWithIndex(index) {
+  slides[index - 1].style.display = "flex";
+  dots[index - 1].className += " active";
+  currentSlide = index;
+}
 
+function displaySlideWithIndex(index) {
+  hideAllSlides();
+  resetAllDots();
+  activateSlideAndDotWithIndex(index);
+}
 
+getPosts(postsContainer).then(() => {
+  displaySlideWithIndex(1);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+getProjects(categoriesContainer);
