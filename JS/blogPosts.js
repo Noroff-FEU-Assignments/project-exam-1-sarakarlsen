@@ -45,9 +45,9 @@ function createHTML(info, infoAuthor) {
   detailContainer.innerHTML += `
       <div class="post-header">
       <ul class="flex-item">
-  <h3>${info.title.rendered}</h3>
-  <h6 class="extra-pad">Story by: ${infoAuthor[0]._embedded.author[0].name}</h6>
-  <h6 class="extra-pad">Posted ${info.date}</h6>
+  <h2 class="set-width">${info.title.rendered}</h2>
+  <h6 class="set-width">Story by: ${infoAuthor[0]._embedded.author[0].name}</h6>
+  <h6 class="set-width">Posted ${info.date}</h6>
 </ul>
 <ul class="flex-item" id="front" style="background-image:url(${info.jetpack_featured_media_url});"></ul>
 </div>

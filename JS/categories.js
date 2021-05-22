@@ -37,11 +37,11 @@ async function getCategories() {
 
   jsonCat.forEach(function (category) {
     categoryContainer.innerHTML += `<div class="grid-item">
-    <h5>${category.title.rendered}</h5>
-  <h6 style="height:20px;">${category.date}</h6>
+    <h3>${category.title.rendered}</h3>
+  <h6 class="fix-height-20">${category.date}</h6>
   <a href="categories.html?id=${category.categories}"></a>
-  <div class="description"${category.excerpt.rendered}</div>
-  <a href="blogpost.html?id=${category.id}"><img src="${category.jetpack_featured_media_url}"</img></a></ul>
+  <h5 class="fix-height-60"${category.excerpt.rendered}</h5>
+  <a href="blogpost.html?id=${category.id}"><img class="has-opacity" alt="" src="${category.jetpack_featured_media_url}"/></a></ul>
   <button class="btn-space"><a href="blogpost.html?id=${category.id}">READ POST</a></button>
   </div>
   `;

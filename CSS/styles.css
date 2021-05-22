@@ -12,17 +12,11 @@ body {
   overflow-x: hidden;
 }
 
-.favicon {
-  size: 12px;
-}
-
 header {
   padding: 30px;
-  background-color: #ceccc5;
 }
 
 header,
-h2,
 .title {
   text-transform: uppercase;
 }
@@ -38,41 +32,45 @@ i.fas.fa-bars {
   font-weight: 300;
 }
 
-h1,
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
 h3,
-h4,
-h5 {
-  font-family: "Cormorant Garamond", serif;
-}
-
-h1,
-h5 {
-  color: #4e4e4e;
-}
-
-h1,
-h5,
 h4.nav {
   font-size: 2rem;
 }
 
-h2,
 h4 {
   font-size: 1rem;
 }
 
-h3 {
-  font-size: 3rem;
-  color: #4e4e4e;
-}
-
 h5 {
-  height: 60px;
+  font-size: 1.2rem;
 }
 
 h6,
-.form-error {
+form.error {
   font-size: 0.8rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  color: #343434;
 }
 
 blockquote p,
@@ -93,7 +91,6 @@ h6.footer {
 }
 
 header,
-h2,
 .title,
 .back,
 button,
@@ -105,40 +102,34 @@ blockquote,
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
-.back {
-  display: block;
-}
-
-.far.fa-chevron-up {
+.back,
+.far.fa-chevron-up,
+button,
+cite,
+.logo,
+.hamburger-label,
+#hamburger-menu:checked ~ nav ul,
+label.form,
+input#subject {
   display: block;
 }
 
 button {
-  display: block;
   padding: 15px;
-  background-color: transparent;
+  background-color: #fff;
   border-style: solid;
-  border-color: #6f6859;
+  border-color: #fff;
   border-width: thin;
   border-radius: 2px;
   transition: 0.3s;
-  color: #000;
-  width: 150px;
-}
-
-button:hover {
-  background-color: #fff;
+  color: #343434;
+  width: 130px;
 }
 
 button#dark,
 button#load-more {
-  background-color: #4a4841;
-  border-color: #4a4841;
-  color: #fff;
+  background-color: #343434;
+  border-color: #343434;
   transition: 0.3s;
 }
 
@@ -147,22 +138,32 @@ button#load-more {
   height: 10%;
 }
 
+button#dark:hover,
 button#load-more:hover {
-  background-color: #76746d;
-  border-color: #76746d;
-  text-decoration: underline;
-}
-
-button#dark:hover {
-  background-color: #76746d;
-  border-color: #76746d;
+  background-color: #7e6d4e;
+  border-color: #7e6d4e;
 }
 
 blockquote {
-  width: 100%;
-  background-color: #faf8f0;
   padding: 60px 0px 60px 0px;
   margin: 20px 0px 20px 0px;
+}
+
+blockquote,
+.grid-item,
+.container-post,
+.post-header,
+.container {
+  background-color: #faf8f0;
+}
+
+blockquote,
+img,
+img.has-opacity,
+.post-content img,
+.about-container,
+input.form {
+  width: 100%;
 }
 
 blockquote p:before {
@@ -177,12 +178,17 @@ blockquote.wp-block-quote.is-style-default {
 }
 
 cite {
-  display: block;
   padding: 15px;
+  margin-left: 250px;
 }
 
 img.wp-image-113 {
   width: 400px;
+  height: 100%;
+}
+
+.container,
+img.wp-image-113 {
   height: 100%;
 }
 
@@ -194,19 +200,17 @@ img.front {
 .logo {
   width: 200px;
   height: 100px;
-  display: block;
   object-fit: unset;
 }
 
 .prev,
 .next {
-  cursor: pointer;
   top: 50%;
   width: auto;
   padding: 16px;
   position: absolute;
   margin-top: -22px;
-  color: black;
+  color: #343434;
   font-size: 24px;
   transition: 0.6s ease;
   user-select: none;
@@ -217,12 +221,10 @@ img.front {
 }
 
 .grid-item {
-  background-color: #faf8f0;
   margin: 20px;
 }
 
 .form-error {
-  display: none;
   color: red;
   margin-top: 5px;
 }
@@ -232,24 +234,30 @@ img.front {
 }
 
 .dot {
-  cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #ceccc5;
   border-radius: 50%;
-  display: inline-block;
   transition: 0.6s ease;
 }
 
-.current {
-  text-decoration: underline;
+.dot,
+.prev,
+.next,
+button {
+  cursor: pointer;
+}
+
+.dot,
+.white-box {
+  display: inline-block;
 }
 
 .active,
 .dot:hover,
 .dot:focus {
-  background-color: #717171;
+  background-color: #76746d;
 }
 
 ul {
@@ -267,7 +275,9 @@ a {
   color: inherit;
 }
 
-a:hover {
+a:hover,
+.current,
+.btn-space:hover {
   text-decoration: underline;
 }
 
@@ -284,17 +294,23 @@ hr {
 
 footer {
   background-color: #76746d;
+}
+
+footer li,
+.contrast-color,
+button#dark,
+button#load-more {
   color: #fff;
-  padding: 60px;
 }
 
 .hamburger-label {
-  display: block;
   float: right;
 }
 
 #hamburger-menu,
-nav ul {
+nav ul,
+.form-error,
+.hidden {
   display: none;
 }
 
@@ -305,36 +321,23 @@ li.footer {
   display: inline;
 }
 
-#hamburger-menu:checked ~ nav ul {
-  display: block;
-}
-
-img {
-  width: 300px;
+img,
+.insta-col {
   height: 400px;
   object-fit: cover;
 }
 
-img:hover {
-  opacity: 0.5;
+img.has-opacity {
+  height: 350px;
+}
+
+.has-opacity:hover {
+  opacity: 0.7;
   transition: 0.5s ease;
   background-color: rgba(0, 0, 0, 0.23);
 }
 
-.post-content img:hover {
-  opacity: 1;
-}
-
-.post-content {
-  padding: 60px;
-}
-
-.post-content p {
-  padding: 10px 0px 10px 0px;
-}
-
 .post-content img {
-  width: 100%;
   height: auto;
 }
 
@@ -354,27 +357,39 @@ img:hover {
 .container-post,
 .post-header {
   max-width: 1000px;
-  background-color: #faf8f0;
+}
+
+header,
+.insta-container {
+  background-color: #ceccc5;
 }
 
 .insta-col {
   width: 280px;
   height: 280px;
-  object-fit: cover;
+}
+
+.insta-col,
+.flex-item {
   overflow-y: hidden;
 }
 
-.wp-block-group.container-test {
+.about-content {
   max-width: 800px;
+}
+
+footer,
+.about-content {
   padding: 60px;
 }
 
-.categories-container {
-  position: relative;
+.post-content {
+  padding: 40px;
 }
 
-.about-container {
-  width: 100%;
+.categories-container,
+.container {
+  position: relative;
 }
 
 .enlarged {
@@ -391,8 +406,6 @@ input {
 }
 
 input.form {
-  width: 100%;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -404,16 +417,11 @@ input.form {
   text-align: start;
   align-items: center;
   padding: 30px;
-  overflow-y: hidden;
 }
 
-label.form {
-  display: block;
+label.form,
+input.form {
   margin-top: 10px;
-}
-
-input#subject {
-  display: block;
 }
 
 .description,
@@ -423,37 +431,49 @@ main,
 blockquote p,
 .title,
 h1,
-h3,
-h5 {
+h3 {
   padding: 20px;
+}
+
+.fix-height-60 {
+  height: 60px;
+  padding: 20px;
+}
+
+.fix-height-20 {
+  padding: 10px;
+}
+
+h5.fix-height {
+  background-color: #fff;
+}
+
+.set-width {
+  width: 300px;
+  padding: 10px;
 }
 
 .extra-pad {
   padding-left: 20px;
 }
 
-.fab {
+.extra-pad-20 {
+  padding: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+i.fab.fab.fa-instagram,
+i.fab.fab.fa-facebook-f,
+i.fab.fab.fa-facebook-messenger {
   line-height: unset;
-}
-
-.description {
-  height: 60px;
-}
-
-.container {
-  height: 100%;
-  position: relative;
-  background-color: #faf8f0;
-}
-
-.contrast-color {
-  color: #fff;
 }
 
 .white-box {
   background-color: #fff;
   padding: 40px;
-  display: inline-block;
   margin: 20px;
 }
 
@@ -528,10 +548,6 @@ li.footer {
     padding: 15px;
   }
 
-  h4.nav {
-    font-size: 1rem;
-  }
-
   .row {
     display: flex;
     max-width: 1400px;
@@ -547,12 +563,7 @@ li.footer {
     overflow-y: hidden;
   }
 
-  .insta-container {
-    background-color: #c1bdb2;
-  }
-
   .post-header {
-    max-width: 1000px;
     margin: 0 auto;
   }
 
@@ -585,11 +596,16 @@ li.footer {
   }
 
   .post-content {
-    width: 1000px;
+    max-width: 1000px;
   }
   p.hidden {
     padding: 0px 0px 0px 20px;
   }
+
+  h4.nav {
+    font-size: unset;
+  }
+
   li.left-nav {
     float: left;
     padding: 5px 5px 5px 5px;

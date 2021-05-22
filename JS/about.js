@@ -14,7 +14,7 @@ async function getAboutPage() {
        <h1 class="title hidden">${result.title.rendered}</h1>
         ${result.content.rendered}</div>`;
 
-      console.log("hello");
+      console.log(result);
     } else {
       console.log("no");
     }

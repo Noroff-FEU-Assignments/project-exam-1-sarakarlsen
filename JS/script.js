@@ -5,7 +5,7 @@ const slides = document.getElementsByClassName("container-post");
 const dots = document.getElementsByClassName("dot");
 
 const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
-
+const url_alt = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/media";
 const perPage = "per_page=5";
 const postCategory = "categories=19";
 const postInsta = "categories=20";
@@ -27,11 +27,11 @@ async function getPosts(postsContainer) {
       <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
           <div class="container-post">
             <ul class="flex-item">
-              <h3>${result.title.rendered}</h3>
-              <h6 style="padding-left:20px;">${result.date}</h6>
-              <div class="description">${result.excerpt.rendered}</div>
+              <h2 class="set-width">${result.title.rendered}</h2>
+              <h6 class="set-width">${result.date}</h6>
+              <div class="set-width">${result.excerpt.rendered}</div>
               <a href="blogpost.html?id=${result.id}">
-                <button>READ POST</buttton>
+                <button class="btn-space">READ POST</buttton>
               </a>
             </ul>
             <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
@@ -40,11 +40,11 @@ async function getPosts(postsContainer) {
       postsContainer.innerHTML += `
         <div class="container-post" style="display:none">
             <ul class="flex-item">
-              <h3>${result.title.rendered}</h3>
-              <h6 style="padding-left:20px;">${result.date}</h6>
-              <div class="description"${result.excerpt.rendered}</div>
-              <a href="blogpost.html?id=${result.id}">
-                <button>READ POST</buttton>
+            <h2 class="set-width">${result.title.rendered}</h2>
+            <h6 class="set-width">${result.date}</h6>
+            <div class="set-width">${result.excerpt.rendered}</div>
+            <a href="blogpost.html?id=${result.id}">
+              <button class="btn-space">READ POST</buttton>
               </a>
             </ul>
             <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
@@ -65,8 +65,8 @@ async function getProjects(categoriesContainer) {
       categoriesContainer.innerHTML += `
             <div class="grid-item" id="index">
               <ul>
-              <a href="blogpost.html?id=${category.id}"><img src="${category.jetpack_featured_media_url}"</img></a>
-                <h5>${category.title.rendered}</h5>
+              <a href="blogpost.html?id=${category.id}"><img class="has-opacity" src="${category.jetpack_featured_media_url}" alt=""/></a>
+                <h3>${category.title.rendered}</h3>
                 <a href="blogpost.html?id=${category.id}">
                   <button id="dark">READ POST</buttton>
                 </a>
@@ -80,16 +80,15 @@ async function getProjects(categoriesContainer) {
 }
 
 async function getPhotos() {
-  const photos = await fetch(url + postInsta);
-  const instaPost = await photos.json();
+  const altTextFetch = await fetch(url_alt);
+  const altText = await altTextFetch.json();
 
-  instaPost.forEach(function (photo, index) {
+  console.log(altText);
+
+  altText.forEach(function (alt, index) {
     if (index <= 4) {
-      instagramContainer.innerHTML += `
-            <div class="insta-col">
-                <img src="${photo.jetpack_featured_media_url}"</img>
-            </div>`;
-      console.log("Photos", photo.jetpack_featured_media_url);
+      instagramContainer.innerHTML += `   <div class="insta-col"><img src="${alt.source_url}" alt="${alt.alt_text}"/>
+      </div>`;
     } else {
       instagramContainer.innerHTML += ``;
     }
