@@ -55,7 +55,7 @@ form.addEventListener("submit", (e) => {
   validateForm();
   console.log("submit");
   if (isFormValid) {
-    form.innerHTML = `<div class="container white-box"><h5>Thank you!</h5> Thank you for your message. We will get back to you as soon as possible.</div> `;
+    form.innerHTML = `<div class="container white-box"><h3>Thank you!</h3> Thank you for your message. We will get back to you as soon as possible.</div> `;
   }
 });
 

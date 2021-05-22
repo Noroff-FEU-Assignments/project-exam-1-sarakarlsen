@@ -249,8 +249,7 @@ button {
   cursor: pointer;
 }
 
-.dot,
-.white-box {
+.dot {
   display: inline-block;
 }
 
@@ -474,7 +473,7 @@ i.fab.fab.fa-facebook-messenger {
 .white-box {
   background-color: #fff;
   padding: 40px;
-  margin: 20px;
+  margin: 20px 0px 20px 0px;
 }
 
 #front {
@@ -579,6 +578,10 @@ li.footer {
   }
   .prev {
     left: 0px;
+  }
+
+  .white-box {
+    display: inline-block;
   }
 
   button#load-more {
