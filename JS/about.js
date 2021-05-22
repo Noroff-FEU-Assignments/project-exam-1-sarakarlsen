@@ -11,7 +11,7 @@ async function getAboutPage() {
   json.forEach(function (result, index) {
     if (index === 0) {
       pageContainer.innerHTML += `
-       <h1>${result.title.rendered}</h1>
+       <h1 class="title hidden">${result.title.rendered}</h1>
         ${result.content.rendered}</div>`;
 
       console.log("hello");

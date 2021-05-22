@@ -6,15 +6,9 @@ const id = params.get("id");
 console.log(id);
 
 const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts";
-
 const url_title = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/categories/";
-
 const url_api = url + "/" + id;
-console.log(url_api);
-
 const url_author = url + "?_embed=";
-
-console.log(url_author);
 
 async function getSinglePost() {
   try {
@@ -43,15 +37,17 @@ async function getSinglePost() {
   }
 }
 
-getSinglePost();
+getSinglePost().then(() => {
+  enlargeImage();
+});
 
 function createHTML(info, infoAuthor) {
   detailContainer.innerHTML += `
       <div class="post-header">
       <ul class="flex-item">
-  <h1>${info.title.rendered}</h1>
-  <h4 style="padding-left:20px;">Story by: ${infoAuthor[0]._embedded.author[0].name}</h4>
-  <h4 style="padding-left:20px;">Posted ${info.date}</h4>
+  <h3>${info.title.rendered}</h3>
+  <h6 class="extra-pad">Story by: ${infoAuthor[0]._embedded.author[0].name}</h6>
+  <h6 class="extra-pad">Posted ${info.date}</h6>
 </ul>
 <ul class="flex-item" id="front" style="background-image:url(${info.jetpack_featured_media_url});"></ul>
 </div>
@@ -59,4 +55,13 @@ function createHTML(info, infoAuthor) {
 </div>
 
 `;
+}
+
+function enlargeImage() {
+  var images = document.querySelector(".wp-block-image");
+
+  images.addEventListener("click", function () {
+    images.classList.toggle("enlarged");
+    console.log("Zoom in and out");
+  });
 }

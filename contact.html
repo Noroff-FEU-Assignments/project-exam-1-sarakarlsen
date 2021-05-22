@@ -24,27 +24,31 @@
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 </head>
-<a href="index.html"><h2 class="logo" alt="Monochrome spaces logo">Monochrome Spaces</h2></a>
+<a href="index.html"><img src="Images/ms-logo.svg"class="logo"/></a>
   <header class="header">
     <a name="top"></a>
     <input type="checkbox" id="hamburger-menu">
     <nav>
       <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <ul>
-        <li class="left-nav"><a href="index.html">Home</a></li>
-        <li class="left-nav"><a href="index.html">About</a></li>
-        <li><a href="categories.html?id=19">My home</a><p class="hidden">/</p></li> 
-        <li><a href="categories.html?id=20">Projects</a><p class="hidden">/</p></li> 
-        <li><a href="categories.html?id=21">Garden</a><p class="hidden">/</p></li> 
-        <li><a href="allposts.html">All Posts</a></li> 
-        <li class="search"><input type="text" placeholder="Search.."><i class="far fa-search"></i></li>
+        <li class="left-nav"><a href="index.html"><h4 class="nav">Home</h4></a></li>
+        <li class="left-nav"><a href="about.html"><h4 class="nav">About</h4></a></li>
+        <li><a href="categories.html?id=19" id="myHome"><h4 class="nav">My home</h4></a><p class="hidden">/</p></li> 
+        <li><a href="categories.html?id=20"><h4 class="nav">Projects</h4></a><p class="hidden">/</p></li> 
+        <li><a href="categories.html?id=21"><h4 class="nav">Garden</h4></a><p class="hidden">/</p></li> 
+        <li><a href="allposts.html"><h4 class="nav">All Posts</h4></a></li> 
+        <li class="search"><input class="search" type="text" placeholder="Search.."><label for="search-icon"><i class="far fa-search"></i></label></li>
       </ul>
     </nav>
   </header>
 <body>
-    <hr class="solid">
-  <h1>CONTACT</h1>
-  <div class="containerForm">
+    <hr/>
+    <main class="background-img">
+  <h1 class="title contrast-color">Contact</h1>
+  <p class="title white-box">Interested in working together? send an e-mail to <a href="mailto:hello@monohromespaces.com">hello@monohromespaces.com</a> <br>or
+    complete the form below to get the conversation started.</p>
+  <div class="container-post">
+    <div class="flex-item center">
     <form class="contactForm">
         <label class="form">
             Name (required)
@@ -57,7 +61,7 @@
         </label>
         <div class="form-error" id="emailError">Please enter a valid email address</div>
         <label class="form">
-          Subject
+          Subject (min. 15 characters)
             <input class="form" name="subject" id="subject">
         </label>
         <div class="form-error" id="subjectError">Subject must be at least 15 characters</div>
@@ -66,28 +70,58 @@
             <input class="form" name="textarea" id="textarea">
         </label>
         <div class="form-error" id="textError">Please fill in at least 25 characters</div>
-        <button class="button" id="validate-btn"> SUBMIT</button>
+        <button class="btn-space">SUBMIT</button>
     </form>
 </div>
-<hr class="solid">
+<div class="flex-item center">
+  <h5>Submissions</h5>
+  <p style="padding-top: 20px;">
+    To submit content for consideration on our
+    blog, please email <a href="mailto:content@monochromespaces.com">content@monochromespaces.com</a>
+  </p>
+  <br><br>
+  <h5>Press & bookings</h5>
+<p style="padding-top:20px;">To book Sara for podcasts or
+other events, please email <a href="mailto:press@monochromespaces.com">press@monochromespaces.com</a>
+</p>
+</div>
+</div>
+</main>
 <footer>
-    <div class="row">
-      <div class="column">
-        <ul>
-          <li><a href="about.html">About</a> </li>
-          <li><a href="contact.html">Contact</a> </li>
-       </ul>
-      </div>
-      <div class="column">
-        <ul>
-        <li><i class="fab fa-instagram"></i></li>
-        <li><i class="fab fa-facebook-f"></i></li>
-        <li><i class="fab fa-facebook-messenger"></i></li>
-        <li><i class="fab fa-twitter"></i></li>   
-      </ul>
-      </div>
+  <div class="row">
+    <div class="column">
+      <ul>
+          <li><h4>ABOUT</h4></li>
+            <li><h6 class="footer">This is a blog about interior design.<br>
+               Inpiration, projects and photos from my own home.
+            <a href="about.html" class="current">Read more</h6></a></li>
+     </ul>
     </div>
-  </footer>
+    <div class="column">
+      <ul>
+        <li><h4>CONTACT</h4></li>
+        <li><a href="mailto:hello@monochromespaces.com"><h6 class="footer">hello@monochromespaces.com</a><br>
+          or use our
+        <a href="contact.html">contact form</a></h6> </li>
+     </ul>
+    </div>
+    <div class="column">
+      <ul>
+      <li><h4>SOCIAL</h4></li>
+      <div class="row" id="social">
+      <div class="column"><li class="footer"><i class="fab fa-instagram"></i></li></div>
+      <div class="column"><li class="footer"><i class="fab fa-facebook-f"></i></li></div>
+      <div class="column"><li class="footer"><i class="fab fa-facebook-messenger"></i></li></div>
+      <div class="column"><li class="footer"><i class="fab fa-twitter"></i></li></div>
+    </ul>
+    <ul> <li> <h6 class="footer"> &copy; Sara Karlsen Design, 2021</h6>
+
+    </li>
+
+    </ul>
+    </div>   
+  </div>
+</footer>
   <script src="JS/contactform.js"></script>
 </body>
 </html>

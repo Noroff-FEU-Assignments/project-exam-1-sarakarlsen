@@ -1,5 +1,6 @@
 const postsContainer = document.querySelector(".container");
 const categoriesContainer = document.querySelector(".grid-container");
+const instagramContainer = document.querySelector(".insta-container");
 const slides = document.getElementsByClassName("container-post");
 const dots = document.getElementsByClassName("dot");
 
@@ -7,6 +8,7 @@ const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
 
 const perPage = "per_page=5";
 const postCategory = "categories=19";
+const postInsta = "categories=20";
 
 let currentSlide = 1;
 
@@ -25,11 +27,11 @@ async function getPosts(postsContainer) {
       <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
           <div class="container-post">
             <ul class="flex-item">
-              <h1>${result.title.rendered}</h1>
+              <h3>${result.title.rendered}</h3>
               <h6 style="padding-left:20px;">${result.date}</h6>
               <div class="description">${result.excerpt.rendered}</div>
               <a href="blogpost.html?id=${result.id}">
-                <button class="button">READ POST</buttton>
+                <button>READ POST</buttton>
               </a>
             </ul>
             <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
@@ -38,11 +40,11 @@ async function getPosts(postsContainer) {
       postsContainer.innerHTML += `
         <div class="container-post" style="display:none">
             <ul class="flex-item">
-              <h1>${result.title.rendered}</h1>
+              <h3>${result.title.rendered}</h3>
               <h6 style="padding-left:20px;">${result.date}</h6>
               <div class="description"${result.excerpt.rendered}</div>
               <a href="blogpost.html?id=${result.id}">
-                <button class="button">READ POST</buttton>
+                <button>READ POST</buttton>
               </a>
             </ul>
             <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
@@ -61,18 +63,35 @@ async function getProjects(categoriesContainer) {
   categories.forEach(function (category, index) {
     if (index <= 2) {
       categoriesContainer.innerHTML += `
-            <div class="grid-item">
+            <div class="grid-item" id="index">
               <ul>
-                <img src="${category.jetpack_featured_media_url}"</img>
-                <h3>${category.title.rendered}</h3>
+              <a href="blogpost.html?id=${category.id}"><img src="${category.jetpack_featured_media_url}"</img></a>
+                <h5>${category.title.rendered}</h5>
                 <a href="blogpost.html?id=${category.id}">
-                  <button class="button"id="dark">READ POST</buttton>
+                  <button id="dark">READ POST</buttton>
                 </a>
               </ul>
             </div>`;
       console.log("CategoryId:", category.id);
     } else {
       categoriesContainer.innerHTML += ``;
+    }
+  });
+}
+
+async function getPhotos() {
+  const photos = await fetch(url + postInsta);
+  const instaPost = await photos.json();
+
+  instaPost.forEach(function (photo, index) {
+    if (index <= 4) {
+      instagramContainer.innerHTML += `
+            <div class="insta-col">
+                <img src="${photo.jetpack_featured_media_url}"</img>
+            </div>`;
+      console.log("Photos", photo.jetpack_featured_media_url);
+    } else {
+      instagramContainer.innerHTML += ``;
     }
   });
 }
@@ -119,8 +138,13 @@ function displaySlideWithIndex(index) {
   activateSlideAndDotWithIndex(index);
 }
 
-getPosts(postsContainer).then(() => {
-  displaySlideWithIndex(1);
-});
-
-getProjects(categoriesContainer);
+getPosts(postsContainer)
+  .then(() => {
+    displaySlideWithIndex(1);
+  })
+  .then(() => {
+    getProjects(categoriesContainer);
+  })
+  .then(() => {
+    getPhotos();
+  });

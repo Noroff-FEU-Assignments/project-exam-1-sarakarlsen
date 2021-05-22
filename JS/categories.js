@@ -1,5 +1,6 @@
 const categoryContainer = document.querySelector(".grid-container");
 const titleContainer = document.querySelector(".title");
+const loaderDiv = document.querySelector(".loading");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -14,6 +15,8 @@ const url_title =
 
 console.log(url_category);
 console.log(url_title);
+console.log(url_category);
+console.log(loaderDiv);
 
 async function getCategories() {
   const responseCat = await fetch(url_category);
@@ -26,18 +29,20 @@ async function getCategories() {
   console.log(jsonCat);
   console.log(categoryContainer);
 
+  loaderDiv.innerHTML = ``;
+
   titleContainer.innerHTML += `<h1>${jsonTitle.name}</h1>
   <h4>${jsonTitle.description}</h4>
   `;
 
   jsonCat.forEach(function (category) {
     categoryContainer.innerHTML += `<div class="grid-item">
-    <h3>${category.title.rendered}</h3>
+    <h5>${category.title.rendered}</h5>
   <h6 style="height:20px;">${category.date}</h6>
-  <a href="categories.html?id=${category.categories}">test</a>
+  <a href="categories.html?id=${category.categories}"></a>
   <div class="description"${category.excerpt.rendered}</div>
-  <img src="${category.jetpack_featured_media_url}"</img></ul>
-  <p><a href="blogpost.html?id=${category.id}">READ POST</a></p>
+  <a href="blogpost.html?id=${category.id}"><img src="${category.jetpack_featured_media_url}"</img></a></ul>
+  <button class="btn-space"><a href="blogpost.html?id=${category.id}">READ POST</a></button>
   </div>
   `;
   });

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-  
+<html lang="en"></html>  
 <head>
   <title>Monochrome Spaces</title>
   <meta name="description"
     content="This is a website and blog founded in Oslo, Norway. We share our passion and interests for interior design. " />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel ="icon" href="Images/ms-favicon.png" class="favicon">
   <link rel="stylesheet" href="CSS/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
@@ -24,49 +24,68 @@
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 </head>
-<a href="index.html"><h2 class="logo" alt="Monochrome spaces logo">Monochrome Spaces</h2></a>
+<a href="index.html"><img src="Images/ms-logo.svg"class="logo"/></a>
   <header class="header">
     <a name="top"></a>
     <input type="checkbox" id="hamburger-menu">
     <nav>
       <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <ul>
-        <li class="left-nav"><a href="index.html">Home</a></li>
-        <li class="left-nav"><a href="about.html">About</a></li>
-        <li><a href="categories.html?id=19">My home</a><p class="hidden">/</p></li> 
-        <li><a href="categories.html?id=20">Projects</a><p class="hidden">/</p></li> 
-        <li><a href="categories.html?id=21">Garden</a><p class="hidden">/</p></li> 
-        <li><a href="allposts.html">All Posts</a></li> 
-        <li class="search"><input type="text" placeholder="Search.."><i class="far fa-search"></i></li>
+        <li class="left-nav"><a href="index.html"><h4 class="nav">Home</h4></a></li>
+        <li class="left-nav"><a href="about.html"><h4 class="nav">About</h4></a></li>
+        <li><a href="categories.html?id=19" id="myHome"><h4 class="nav">My home</h4></a><p class="hidden">/</p></li> 
+        <li><a href="categories.html?id=20"><h4 class="nav">Projects</h4></a><p class="hidden">/</p></li> 
+        <li><a href="categories.html?id=21"><h4 class="nav">Garden</h4></a><p class="hidden">/</p></li> 
+        <li><a href="allposts.html"><h4 class="nav">All Posts</h4></a></li> 
+        <li class="search"><input class="search" type="text" placeholder="Search.."><label for="search-icon"><i class="far fa-search"></i></label></li>
       </ul>
     </nav>
   </header>
 <body>
-    <hr class="solid">
-    <a href="allposts.html">All Posts</a>
+  <main>
+    <hr/>
+    <h1 class="hidden">POST</h1>
     <div class="blog-post">
       <div class="loader"></div>
     </div>
-    <a href="#">Back to top</a>
-    <hr class="solid">
-<footer>
-    <div class="row">
-      <div class="column">
-        <ul>
-          <li><a href="about.html">About</a> </li>
-          <li><a href="contact.html">Contact</a> </li>
-       </ul>
+    <a href="#"><i class="far fa-chevron-up back"></i></a>
+    <a href="#" class="back">Back to top</a>
+  </main>   
+    <footer>
+      <div class="row">
+        <div class="column">
+          <ul>
+              <li><h4>ABOUT</h4></li>
+                <li><h6 class="footer">This is a blog about interior design.<br>
+                   Inpiration, projects and photos from my own home.
+                <a href="about.html" class="current">Read more</h6></a></li>
+         </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li><h4>CONTACT</h4></li>
+            <li><a href="mailto:hello@monochromespaces.com"><h6 class="footer">hello@monochromespaces.com</a><br>
+              or use our
+            <a href="contact.html">contact form</a></h6> </li>
+         </ul>
+        </div>
+        <div class="column">
+          <ul>
+          <li><h4>SOCIAL</h4></li>
+          <div class="row" id="social">
+          <div class="column"><li class="footer"><i class="fab fa-instagram"></i></li></div>
+          <div class="column"><li class="footer"><i class="fab fa-facebook-f"></i></li></div>
+          <div class="column"><li class="footer"><i class="fab fa-facebook-messenger"></i></li></div>
+          <div class="column"><li class="footer"><i class="fab fa-twitter"></i></li></div>
+        </ul>
+        <ul> <li> <h6 class="footer"> &copy; Sara Karlsen Design, 2021</h6>
+  
+        </li>
+  
+        </ul>
+        </div>   
       </div>
-      <div class="column">
-        <ul>
-        <li><i class="fab fa-instagram"></i></li>
-        <li><i class="fab fa-facebook-f"></i></li>
-        <li><i class="fab fa-facebook-messenger"></i></li>
-        <li><i class="fab fa-twitter"></i></li>   
-      </ul>
-      </div>
-    </div>
-  </footer>
+    </footer>
   <script src="JS/blogPosts.js"></script>
 </body>
 </html>
