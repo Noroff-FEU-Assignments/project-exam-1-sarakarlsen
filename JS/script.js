@@ -66,7 +66,7 @@ async function getProjects(categoriesContainer) {
             <div class="grid-item" id="index">
               <ul>
               <a href="blogpost.html?id=${category.id}"><img class="has-opacity" src="${category.jetpack_featured_media_url}" alt=""/></a>
-                <h3>${category.title.rendered}</h3>
+                <h3 class="fix-height-60">${category.title.rendered}</h3>
                 <a href="blogpost.html?id=${category.id}">
                   <button id="dark">READ POST</buttton>
                 </a>

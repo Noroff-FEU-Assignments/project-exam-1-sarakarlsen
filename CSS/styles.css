@@ -378,7 +378,7 @@ header,
 }
 
 footer,
-.about-content {
+.extra-pad-60 {
   padding: 60px;
 }
 
@@ -466,7 +466,8 @@ h5.fix-height {
 
 i.fab.fab.fa-instagram,
 i.fab.fab.fa-facebook-f,
-i.fab.fab.fa-facebook-messenger {
+i.fab.fab.fa-facebook-messenger,
+i.fab.fab.fa-twitter {
   line-height: unset;
 }
 
