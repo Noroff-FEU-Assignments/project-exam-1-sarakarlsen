@@ -51,7 +51,9 @@ function createHTML(info, infoAuthor) {
 </ul>
 <ul class="flex-item" id="front" style="background-image:url(${info.jetpack_featured_media_url});"></ul>
 </div>
-<div class="post-content">${info.content.rendered}
+<div class="post-content">
+<h1 class="title">${info.title.rendered}</h1>
+${info.content.rendered}
 </div>
 
 `;
