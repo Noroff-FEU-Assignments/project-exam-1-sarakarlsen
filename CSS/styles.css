@@ -491,9 +491,9 @@ i.fab.fab.fa-twitter {
 }
 
 .loader {
-  border: 16px solid #fff;
+  border: 16px solid #ceccc5;
   border-radius: 50%;
-  border-top: 16px solid #c1bdb2;
+  border-top: 16px solid #76746d;
   width: 80px;
   height: 80px;
   -webkit-animation: spin 2s linear infinite;
