@@ -30,9 +30,8 @@ async function getPosts(postsContainer) {
               <h2 class="set-width">${result.title.rendered}</h2>
               <h6 class="set-width">${result.date}</h6>
               <div class="set-width">${result.excerpt.rendered}</div>
-              <a href="blogpost.html?id=${result.id}">
-                <button class="btn-space">READ POST</buttton>
-              </a>
+                <button class="btn-space"><a href="blogpost.html?id=${result.id}">READ POST
+              </a></button>
             </ul>
             <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
           </div>`;

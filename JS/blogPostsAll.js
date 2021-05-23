@@ -20,16 +20,15 @@ async function getAllPosts() {
             <div class="grid-item">
                   <h3 class="fix-height-60">${allPosts.title.rendered}</h3>
                 <h6 class="fix-height-20">${allPosts.date}</h6>
-                <a href="categories.html?id=${allPosts.categories}"></a>
                 <h5 class="fix-height-60"${allPosts.excerpt.rendered}</h5>
-                <a href="blogpost.html?id=${allPosts.id}"><img class="has-opacity" src="${allPosts.jetpack_featured_media_url}" alt=""/></a></ul>
+                <a href="blogpost.html?id=${allPosts.id}"><img class="has-opacity" src="${allPosts.jetpack_featured_media_url}" alt="Blog post link"/></a>
                 <button class="btn-space"><a href="blogpost.html?id=${allPosts.id}">READ POST</a></button>
                 </div>
                 </div>
                 `;
     });
 
-    allPostsContainer.innerHTML += `<button class="space-btn" onclick=getRest(); id="load-more">LOAD MORE POSTS</button>`;
+    allPostsContainer.innerHTML += `<button onclick=getRest(); id="load-more">LOAD MORE POSTS</button>`;
 
     button = document.getElementById("load-more");
 
@@ -60,9 +59,8 @@ async function getRest() {
       <div class="grid-item">
             <h3 class="fix-height-60">${rest.title.rendered}</h3>
           <h6 class="fix-height-20">${rest.date}</h6>
-          <a href="categories.html?id=${rest.categories}"></a>
-          <h5 class="fix-height-60"${rest.excerpt.rendered}</h5>
-          <a href="blogpost.html?id=${rest.id}"><img class="has-opacity" alt="" src="${rest.jetpack_featured_media_url}"/></a></ul>
+          <h5>="fix-height-60"${rest.excerpt.rendered}</h5>
+          <a href="blogpost.html?id=${rest.id}"><img class="has-opacity" src="${rest.jetpack_featured_media_url}" alt="Blog post link"/></a>
           <button class="btn-space"><a href="blogpost.html?id=${rest.id}">READ POST</a></button>
           </div>
           </div>
