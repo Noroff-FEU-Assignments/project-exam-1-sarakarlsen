@@ -10,7 +10,7 @@ console.log(prev);
 console.log(next);
 
 const url = "https://monochromespaces.com/wp-json/wp/v2/posts?";
-const url_alt = "https:/monochromespaces.com/wp-json/wp/v2/media";
+const url_alt = "https://monochromespaces.com/wp-json/wp/v2/media";
 const perPage = "per_page=5";
 const postCategory = "categories=19";
 const postInsta = "categories=20";
