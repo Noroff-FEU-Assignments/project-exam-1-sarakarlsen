@@ -534,7 +534,8 @@ footer {
   color: #fff;
 }
 
-.row#social {
+.row#social,
+.top-space {
   padding-top: 20px;
 }
 
