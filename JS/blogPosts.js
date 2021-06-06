@@ -5,8 +5,8 @@ const id = params.get("id");
 
 console.log(id);
 
-const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts";
-const url_title = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/categories/";
+const url = "https://monochromespaces.com/wp-json/wp/v2/posts";
+const url_title = "https://monochromespaces.com/wp-json/wp/v2/categories/";
 const url_api = url + "/" + id;
 const url_author = url + "?_embed=";
 
@@ -44,12 +44,12 @@ getSinglePost().then(() => {
 function createHTML(info, infoAuthor) {
   detailContainer.innerHTML += `
       <div class="post-header">
-      <ul class="flex-item">
+      <div class="flex-item">
   <h2 class="set-width">${info.title.rendered}</h2>
   <h6 class="set-width">Story by: ${infoAuthor[0]._embedded.author[0].name}</h6>
   <h6 class="set-width">Posted ${info.date}</h6>
-</ul>
-<ul class="flex-item" id="front" style="background-image:url(${info.jetpack_featured_media_url});"></ul>
+</div>
+<div class="flex-item" id="front" style="background-image:url(${info.jetpack_featured_media_url});"></div>
 </div>
 <div class="post-content">
 <h1 class="title">${info.title.rendered}</h1>

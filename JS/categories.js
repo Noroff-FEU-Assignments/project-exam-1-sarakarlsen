@@ -6,12 +6,11 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 const url_category =
-  "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?categories=" + id;
+  "https://monochromespaces.com/wp-json/wp/v2/posts?categories=" + id;
 
 console.log(id);
 
-const url_title =
-  "https://tsh.olx.mybluehost.me/wp-json/wp/v2/categories/" + id;
+const url_title = "https://monochromespaces.com/wp-json/wp/v2/categories/" + id;
 
 console.log(url_category);
 console.log(url_title);
@@ -39,7 +38,7 @@ async function getCategories() {
     <h3>${category.title.rendered}</h3>
   <h6 class="fix-height-20">${category.date}</h6>
   <h5 class="fix-height-60"${category.excerpt.rendered}</h5>
-  <a href="blogpost.html?id=${category.id}"><img class="has-opacity" alt="Blog specific page link" src="${category.jetpack_featured_media_url}"/></a></ul>
+  <a href="blogpost.html?id=${category.id}"><img class="has-opacity" alt="Blog specific page link" src="${category.jetpack_featured_media_url}"/></a>
   <button class="btn-space"><a href="blogpost.html?id=${category.id}">READ POST</a></button>
   </div>
   `;

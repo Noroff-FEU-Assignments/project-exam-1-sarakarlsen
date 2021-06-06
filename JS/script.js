@@ -3,9 +3,14 @@ const categoriesContainer = document.querySelector(".grid-container");
 const instagramContainer = document.querySelector(".insta-container");
 const slides = document.getElementsByClassName("container-post");
 const dots = document.getElementsByClassName("dot");
+const prev = document.getElementsByClassName("prev");
+const next = document.getElementsByClassName("next");
 
-const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/posts?";
-const url_alt = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/media";
+console.log(prev);
+console.log(next);
+
+const url = "https://monochromespaces.com/wp-json/wp/v2/posts?";
+const url_alt = "https:/monochromespaces.com/wp-json/wp/v2/media";
 const perPage = "per_page=5";
 const postCategory = "categories=19";
 const postInsta = "categories=20";
@@ -24,29 +29,29 @@ async function getPosts(postsContainer) {
     if (index === 0) {
       postsContainer.innerHTML += `
       <a class="prev" aria-label="Previous slide" tabindex=0 onclick="previousSlide(-1)"><i class="far fa-chevron-left"></i></a>
-      <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
+      <a class="next" aria-label="Next slide" tabindex=0 onclick="nexSlide(1)"><i class="far fa-chevron-right"></i></a>
           <div class="container-post">
-            <ul class="flex-item">
+            <div class="flex-item">
               <h2 class="set-width">${result.title.rendered}</h2>
               <h6 class="set-width">${result.date}</h6>
               <div class="set-width">${result.excerpt.rendered}</div>
                 <button class="btn-space"><a href="blogpost.html?id=${result.id}">READ POST
               </a></button>
-            </ul>
-            <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
+            </div>
+            <div class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></div>
           </div>`;
     } else {
       postsContainer.innerHTML += `
         <div class="container-post" style="display:none">
-            <ul class="flex-item">
+            <div class="flex-item">
             <h2 class="set-width">${result.title.rendered}</h2>
             <h6 class="set-width">${result.date}</h6>
             <div class="set-width">${result.excerpt.rendered}</div>
             <a href="blogpost.html?id=${result.id}">
               <button class="btn-space">READ POST</buttton>
               </a>
-            </ul>
-            <ul class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></ul>
+            </div>
+            <div class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></div>
         </div>`;
     }
     console.log("PostId:", result.id);
@@ -63,13 +68,13 @@ async function getProjects(categoriesContainer) {
     if (index <= 2) {
       categoriesContainer.innerHTML += `
             <div class="grid-item" id="index">
-              <ul>
+              <div>
               <a href="blogpost.html?id=${category.id}"><img class="has-opacity" src="${category.jetpack_featured_media_url}" alt=""/></a>
                 <h3 class="fix-height-60">${category.title.rendered}</h3>
                 <a href="blogpost.html?id=${category.id}">
                   <button id="dark">READ POST</buttton>
                 </a>
-              </ul>
+              </div>
             </div>`;
       console.log("CategoryId:", category.id);
     } else {

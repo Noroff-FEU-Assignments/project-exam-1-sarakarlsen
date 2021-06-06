@@ -90,7 +90,7 @@ input[type="text"] {
 }
 
 h6.footer {
-  padding-top: 10px;
+  padding: 20px 0px 20px 0px;
 }
 
 header,
@@ -421,6 +421,10 @@ input.form {
   padding: 30px;
 }
 
+span {
+  display: block;
+}
+
 label.form,
 input.form {
   margin-top: 10px;
@@ -521,12 +525,17 @@ i.fab.fab.fa-twitter {
   }
 }
 
-li.footer {
-  padding-right: 10px;
+.column.footer {
+  width: 100px;
+  padding: 5px;
+}
+
+footer {
+  color: #fff;
 }
 
 .row#social {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .btn-space {

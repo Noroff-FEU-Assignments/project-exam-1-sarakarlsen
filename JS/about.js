@@ -1,6 +1,6 @@
 const pageContainer = document.querySelector(".about-container");
 
-const url = "https://tsh.olx.mybluehost.me/wp-json/wp/v2/pages?id=123";
+const url = "https://monochromespaces.com/wp-json/wp/v2/pages?id=123";
 
 async function getAboutPage() {
   try {
