@@ -29,7 +29,7 @@ async function getPosts(postsContainer) {
     if (index === 0) {
       postsContainer.innerHTML += `
       <a class="prev" aria-label="Previous slide" tabindex=0 onclick="previousSlide(-1)"><i class="far fa-chevron-left"></i></a>
-      <a class="next" aria-label="Next slide" tabindex=0 onclick="nexSlide(1)"><i class="far fa-chevron-right"></i></a>
+      <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
           <div class="container-post">
             <div class="flex-item">
               <h2 class="set-width">${result.title.rendered}</h2>
