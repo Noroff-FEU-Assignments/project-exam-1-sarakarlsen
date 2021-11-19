@@ -31,7 +31,7 @@ async function getPosts(postsContainer) {
       <a class="prev" aria-label="Previous slide" tabindex=0 onclick="previousSlide(-1)"><i class="far fa-chevron-left"></i></a>
       <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
           <div class="container-post">
-            <div class="flex-item">
+            <div class="flex-item front">
               <h2 class="set-width">${result.title.rendered}</h2>
               <h6 class="set-width">${result.date}</h6>
               <div class="set-width">${result.excerpt.rendered}</div>
@@ -43,7 +43,7 @@ async function getPosts(postsContainer) {
     } else {
       postsContainer.innerHTML += `
         <div class="container-post" style="display:none">
-            <div class="flex-item">
+            <div class="flex-item front">
             <h2 class="set-width">${result.title.rendered}</h2>
             <h6 class="set-width">${result.date}</h6>
             <div class="set-width">${result.excerpt.rendered}</div>
@@ -67,7 +67,7 @@ async function getProjects(categoriesContainer) {
   categories.forEach(function (category, index) {
     if (index <= 2) {
       categoriesContainer.innerHTML += `
-            <div class="grid-item" id="index">
+            <div class="grid-img">
               <div>
               <a href="blogpost.html?id=${category.id}"><img class="has-opacity" src="${category.jetpack_featured_media_url}" alt=""/></a>
                 <h3 class="fix-height-60">${category.title.rendered}</h3>

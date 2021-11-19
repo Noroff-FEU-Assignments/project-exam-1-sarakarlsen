@@ -35,11 +35,13 @@ async function getCategories() {
 
   jsonCat.forEach(function (category) {
     categoryContainer.innerHTML += `<div class="grid-item">
-    <h3>${category.title.rendered}</h3>
+    <div class="left">
+    <h3 class="fix-height-60">${category.title.rendered}</h3>
   <h6 class="fix-height-20">${category.date}</h6>
   <h5 class="fix-height-60"${category.excerpt.rendered}</h5>
+  <button class="btn-space hide"><a href="blogpost.html?id=${category.id}">READ POST</a></button></div>
   <a href="blogpost.html?id=${category.id}"><img class="has-opacity" alt="Blog specific page link" src="${category.jetpack_featured_media_url}"/></a>
-  <button class="btn-space"><a href="blogpost.html?id=${category.id}">READ POST</a></button>
+ <button class="btn-space show"><a href="blogpost.html?id=${category.id}">READ POST</a></button>
   </div>
   `;
   });
