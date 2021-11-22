@@ -114,10 +114,14 @@ button,
 cite,
 .logo,
 .hamburger-label,
-#hamburger-menu:checked ~ nav ul,
+#hamburger-menu:checked ~ .navigation li,
 label.form,
 input#subject {
   display: block;
+}
+
+.navigation li {
+  margin-left: 25px;
 }
 
 button {
@@ -273,6 +277,7 @@ ul {
 
 li,
 a {
+  list-style: none;
   text-decoration: none;
 }
 
@@ -301,7 +306,6 @@ footer {
   background-color: #76746d;
   left: 0;
   bottom: 0;
-  width: 100%;
 }
 
 footer li,
@@ -313,10 +317,11 @@ button#load-more {
 
 .hamburger-label {
   float: right;
+  margin: 25px;
 }
 
 #hamburger-menu,
-nav ul,
+.navigation li,
 .form-error,
 .hidden {
   display: none;
@@ -586,9 +591,11 @@ footer {
     display: none;
   }
 
-  nav,
-  nav li,
-  nav ul,
+  .navigation {
+    display: block;
+  }
+
+  .navigation li,
   p.hidden {
     display: inline;
   }
@@ -781,10 +788,8 @@ footer {
   .navigation a {
     float: left;
     color: #343434;
-    text-align: center;
-    padding: 14px 16px;
+    padding: 20px;
     text-decoration: none;
-    font-size: 17px;
   }
 
   .navgiation a:hover {
@@ -807,6 +812,7 @@ footer {
 
   .navigation-right {
     float: right;
+    margin-right: -100px;
   }
 }
 
