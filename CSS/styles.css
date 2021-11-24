@@ -9,11 +9,10 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  padding: 30px;
+.navgiation {
+  float: none;
 }
 
-header,
 .title {
   text-transform: uppercase;
 }
@@ -120,6 +119,10 @@ input#subject {
   display: block;
 }
 
+.back.text {
+  padding-bottom: 10px;
+}
+
 .navigation li {
   margin-left: 25px;
 }
@@ -210,7 +213,8 @@ img.front {
 .logo {
   width: 200px;
   height: 100px;
-  object-fit: unset;
+  margin: 0 auto;
+  padding-left: 60px;
 }
 
 .prev,
@@ -285,7 +289,10 @@ a {
   color: inherit;
 }
 
-a:hover,
+nav a:hover {
+  border-bottom: 1px solid;
+}
+
 .current,
 .btn-space:hover {
   text-decoration: underline;
@@ -317,7 +324,7 @@ button#load-more {
 
 .hamburger-label {
   float: right;
-  margin: 25px;
+  margin: 40px 25px 25px 25px;
 }
 
 #hamburger-menu,
@@ -375,6 +382,7 @@ img,
 .container-post,
 .post-header {
   max-width: 1000px;
+  margin: 0 auto;
 }
 
 header,
@@ -424,10 +432,6 @@ input {
 
 input.form {
   margin-bottom: 10px;
-}
-
-.container {
-  margin: auto;
 }
 
 .flex-item {
@@ -517,7 +521,7 @@ i.fab.fab.fa-twitter {
 #front {
   background-size: cover;
   width: 100%;
-  height: 800px;
+  height: 600px;
 }
 
 .wp-block-group__inner-container {
@@ -530,6 +534,7 @@ i.fab.fab.fa-twitter {
 
 .post-content {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 div.wp-block-column {
@@ -537,6 +542,7 @@ div.wp-block-column {
 }
 
 .loader {
+  margin: 0 auto;
   border: 10px solid #ceccc5;
   border-radius: 50%;
   border-top: 10px solid #76746d;
@@ -606,9 +612,14 @@ footer {
     padding: 15px;
   }
 
+  .logo {
+    padding-left: unset;
+  }
+
   .row {
     display: flex;
     max-width: 1600px;
+    margin: 0 auto;
   }
   .container {
     flex-direction: row;
@@ -733,11 +744,6 @@ footer {
     font-size: unset;
   }
 
-  li.left-nav {
-    float: left;
-    padding: 5px 5px 5px 5px;
-  }
-
   .flex-item {
     width: 460px;
   }
@@ -748,10 +754,6 @@ footer {
 
   .flex-item#front {
     order: 2;
-  }
-
-  .flex-item.front {
-    order: 1;
   }
 
   .row#social {
@@ -786,20 +788,13 @@ footer {
   }
 
   .navigation a {
+    padding: 20px;
+  }
+
+  .navigation a {
     float: left;
     color: #343434;
-    padding: 20px;
     text-decoration: none;
-  }
-
-  .navgiation a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .navigation a.active {
-    background-color: #04aa6d;
-    color: white;
   }
 
   .navigation-center a {
@@ -808,6 +803,10 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .h6.current {
+    text-decoration: underline;
   }
 
   .navigation-right {
