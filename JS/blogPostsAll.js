@@ -17,11 +17,11 @@ async function getAllPosts() {
 
       if (index <= 9)
         allPostsContainer.innerHTML += `
-            <div class="grid-item">
+            <div class="grid-item light-bg-second">
             <div class="left">
-                  <h3 class="fix-height-60">${allPosts.title.rendered}</h3>
-                <h6 class="fix-height-20">${allPosts.date}</h6>
-                <h5 class="fix-height-60"${allPosts.excerpt.rendered}</h5>
+                  <h3 class="fix-height lg">${allPosts.title.rendered}</h3>
+                <h6 class="fix-height sm">${allPosts.date}</h6>
+                <h5 class="fix-height lg"${allPosts.excerpt.rendered}</h5>
                 <button class="btn-space hide"><a href="blogpost.html?id=${allPosts.id}">READ POST</a></button>
                 </div>
                 <a href="blogpost.html?id=${allPosts.id}"><img class="has-opacity" src="${allPosts.jetpack_featured_media_url}" alt="Blog post link"/></a>
@@ -31,9 +31,9 @@ async function getAllPosts() {
                 `;
     });
 
-    allPostsContainer.innerHTML += `<button onclick=getRest(); id="load-more">LOAD MORE POSTS</button>`;
+    allPostsContainer.innerHTML += `<button onclick=getRest(); class="load-more">LOAD MORE POSTS</button>`;
 
-    button = document.getElementById("load-more");
+    button = document.querySelector(".load-more");
 
     button.addEventListener("click", (e) => {
       button.classList.add("hidden");
@@ -59,11 +59,11 @@ async function getRest() {
 
       if (index >= 10)
         allPostsContainer.innerHTML += `
-        <div class="grid-item">
+        <div class="grid-item light-bg-second">
         <div class="left">
-              <h3 class="fix-height-60">${rest.title.rendered}</h3>
-            <h6 class="fix-height-20">${rest.date}</h6>
-            <h5 class="fix-height-60"${rest.excerpt.rendered}</h5>
+              <h3 class="fix-height lg">${rest.title.rendered}</h3>
+            <h6 class="fix-height sm">${rest.date}</h6>
+            <h5 class="fix-height lg"${rest.excerpt.rendered}</h5>
             <button class="btn-space hide"><a href="blogpost.html?id=${rest.id}">READ POST</a></button>
             </div>
             <a href="blogpost.html?id=${rest.id}"><img class="has-opacity" src="${rest.jetpack_featured_media_url}" alt="Blog post link"/></a>

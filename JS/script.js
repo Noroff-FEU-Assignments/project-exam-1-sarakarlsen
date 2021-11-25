@@ -30,20 +30,20 @@ async function getPosts(postsContainer) {
       postsContainer.innerHTML += `
       <a class="prev" aria-label="Previous slide" tabindex=0 onclick="previousSlide(-1)"><i class="far fa-chevron-left"></i></a>
       <a class="next" aria-label="Next slide" tabindex=0 onclick="nextSlide(1)"><i class="far fa-chevron-right"></i></a>
-          <div class="container-post">
-            <div class="flex-item front">
+          <div class="container-post index">
+            <div class="flex-item index">
               <h2 class="set-width">${result.title.rendered}</h2>
               <h6 class="set-width">${result.date}</h6>
               <div class="set-width">${result.excerpt.rendered}</div>
                 <button class="btn-space"><a href="blogpost.html?id=${result.id}">READ POST
               </a></button>
             </div>
-            <div class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></div>
+            <div class="flex-item" id="index" style="background-image:url(${result.jetpack_featured_media_url});"></div>
           </div>`;
     } else {
       postsContainer.innerHTML += `
-        <div class="container-post" style="display:none">
-            <div class="flex-item front">
+        <div class="container-post index" style="display:none">
+            <div class="flex-item index">
             <h2 class="set-width">${result.title.rendered}</h2>
             <h6 class="set-width">${result.date}</h6>
             <div class="set-width">${result.excerpt.rendered}</div>
@@ -51,7 +51,7 @@ async function getPosts(postsContainer) {
               <button class="btn-space">READ POST</buttton>
               </a>
             </div>
-            <div class="flex-item" id="front" style="background-image:url(${result.jetpack_featured_media_url});"></div>
+            <div class="flex-item" id="index" style="background-image:url(${result.jetpack_featured_media_url});"></div>
         </div>`;
     }
     console.log("PostId:", result.id);
@@ -70,7 +70,7 @@ async function getProjects(categoriesContainer) {
             <div class="grid-img">
               <div>
               <a href="blogpost.html?id=${category.id}"><img class="has-opacity" src="${category.jetpack_featured_media_url}" alt=""/></a>
-                <h3 class="fix-height-60">${category.title.rendered}</h3>
+                <h3 class="fix-height lg">${category.title.rendered}</h3>
                 <a href="blogpost.html?id=${category.id}">
                   <button id="dark">READ POST</buttton>
                 </a>

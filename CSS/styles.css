@@ -125,6 +125,7 @@ input#subject {
 
 .navigation li {
   margin-left: 25px;
+  text-decoration: none;
 }
 
 button {
@@ -139,20 +140,20 @@ button {
   width: 130px;
 }
 
-button#dark,
-button#load-more {
+button .dark-second,
+button.load-more {
   background-color: #58534d;
   border-color: #58534d;
   transition: 0.3s;
 }
 
-button#load-more {
+button.load-more {
   width: 50%;
   height: 10%;
 }
 
-button#dark:hover,
-button#load-more:hover {
+button.dark:hover,
+button.load-more:hover {
   background-color: #7e6d4e;
   border-color: #7e6d4e;
 }
@@ -160,14 +161,6 @@ button#load-more:hover {
 blockquote {
   padding: 60px 0px 60px 0px;
   margin: 60px 0px 30px 0px;
-}
-
-blockquote,
-.grid-item,
-.container-post,
-.post-header,
-.container {
-  background-color: #faf8f0;
 }
 
 .container,
@@ -182,6 +175,7 @@ img.has-opacity,
 .about-container,
 input.form {
   width: 100%;
+  background-position: center;
 }
 
 blockquote p:before {
@@ -205,7 +199,7 @@ img.wp-image-113 {
   height: 100%;
 }
 
-img.front {
+img.index {
   width: 400px;
   height: 400px;
 }
@@ -279,14 +273,13 @@ ul {
   margin: 0;
 }
 
-li,
-a {
+li {
   list-style: none;
-  text-decoration: none;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -317,8 +310,8 @@ footer {
 
 footer li,
 .contrast-color,
-button#dark,
-button#load-more {
+button.dark,
+button.load-more {
   color: #fff;
 }
 
@@ -360,11 +353,6 @@ img,
 .background-img {
   background-image: url(/Images/nastuh-abootalebi-rSpMla5RItA-unsplash.jpg);
   background-size: cover;
-}
-
-.grid-container#index,
-.container#index {
-  background-color: #faf8f0;
 }
 
 .grid-img {
@@ -409,7 +397,7 @@ footer {
 }
 
 .post-content {
-  padding: 30px;
+  padding: 40px;
 }
 
 .categories-container,
@@ -437,14 +425,14 @@ input.form {
 .flex-item {
   text-align: start;
   align-items: center;
-  padding: 30px;
+  padding: 40px;
 }
 
-.flex-item#front {
+.flex-item#index {
   order: 1;
 }
 
-.flex-item.front {
+.flex-item.index {
   order: 2;
 }
 
@@ -475,17 +463,21 @@ h3 {
   padding: 20px;
 }
 
-.fix-height-60 {
+.fix-height.lg {
   height: 60px;
   padding: 20px;
 }
 
-.fix-height-20 {
+.fix-height.sm {
   padding: 5px 20px 5px 20px;
 }
 
-h5.fix-height {
-  background-color: #fff;
+.light {
+  color: #fff;
+}
+
+.light-bg-second {
+  background-color: #faf8f0;
 }
 
 .set-width {
@@ -518,8 +510,13 @@ i.fab.fab.fa-twitter {
   margin: 20px 0px 20px 0px;
 }
 
-#front {
+.light-bg {
+  background-color: #fff;
+}
+
+#index {
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 600px;
 }
@@ -592,6 +589,24 @@ footer {
   padding: 20px;
 }
 
+.post-content {
+  margin-bottom: 40px;
+}
+
+.container-post {
+  margin-bottom: 40px;
+  padding: 40px;
+}
+
+.container-post.index {
+  margin-bottom: unset;
+  padding: unset;
+}
+
+.fix-height {
+  overflow-y: hidden;
+}
+
 @media only screen and (min-width: 1024px) {
   .hamburger-label {
     display: none;
@@ -650,11 +665,10 @@ footer {
     left: 0px;
   }
 
-  .white-box {
-    display: inline-block;
+  #index {
+    width: 45%;
   }
-
-  button#load-more {
+  buttonload-more {
     margin-top: 60%;
   }
   .grid-container {
@@ -673,7 +687,8 @@ footer {
     padding: 0;
   }
 
-  .grid-container > .grid-item:nth-child(1) button {
+  .grid-container > .grid-item:nth-child(1) button,
+  .grid-container > .grid-item:nth-child(9) button {
     background-color: #7e6d4e;
     color: #fff;
   }
@@ -682,10 +697,7 @@ footer {
     background-color: #ceccc5;
   }
 
-  .grid-container > .grid-item:nth-child(1) {
-    background-color: #fff;
-  }
-
+  .grid-container > .grid-item:nth-child(1),
   .grid-container > .grid-item:nth-child(9) {
     background-color: #fff;
   }
@@ -752,7 +764,7 @@ footer {
     order: unset;
   }
 
-  .flex-item#front {
+  .flex-item.index {
     order: 2;
   }
 
@@ -761,7 +773,7 @@ footer {
     margin-left: 0px;
   }
 
-  #front {
+  #index.container {
     height: 520px;
     width: 460px;
     margin-bottom: 0px;

@@ -43,13 +43,13 @@ getSinglePost().then(() => {
 
 function createHTML(info, infoAuthor) {
   detailContainer.innerHTML += `
-      <div class="post-header">
+      <div class="post-header light-bg-second">
       <div class="flex-item">
   <h2 class="set-width">${info.title.rendered}</h2>
   <h6 class="set-width">Story by: ${infoAuthor[0]._embedded.author[0].name}</h6>
   <h6 class="set-width">Posted ${info.date}</h6>
 </div>
-<div class="flex-item" id="front" style="background-image:url(${info.jetpack_featured_media_url});"></div>
+<div class="flex-item" id="index" style="background-image:url(${info.jetpack_featured_media_url});"></div>
 </div>
 <div class="post-content">
 <h1 class="title">${info.title.rendered}</h1>
