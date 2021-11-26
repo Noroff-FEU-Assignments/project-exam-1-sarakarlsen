@@ -5,9 +5,21 @@ const slides = document.getElementsByClassName("container-post");
 const dots = document.getElementsByClassName("dot");
 const prev = document.getElementsByClassName("prev");
 const next = document.getElementsByClassName("next");
+const nav = document.querySelector("nav");
+const sectionOne = document.querySelector("main .container");
+const sectionOneOptions = {};
 
-console.log(prev);
-console.log(next);
+const sectionOneObserver = new IntersectionObserver(function (
+  entries,
+  sectionOneObserver
+) {
+  entries.forEach((entry) => {
+    console.log(entry.target);
+  });
+},
+sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
 
 const url = "https://monochromespaces.com/wp-json/wp/v2/posts?";
 const url_alt = "https://monochromespaces.com/wp-json/wp/v2/media";
