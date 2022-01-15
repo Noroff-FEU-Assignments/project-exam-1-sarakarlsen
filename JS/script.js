@@ -14,7 +14,7 @@ const sectionOneObserver = new IntersectionObserver(function (
   sectionOneObserver
 ) {
   entries.forEach((entry) => {
-    console.log(entry.target);
+    nav.classList.add("bg-dark");
   });
 },
 sectionOneOptions);
