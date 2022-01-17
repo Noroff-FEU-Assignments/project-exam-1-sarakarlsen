@@ -496,11 +496,6 @@ h3 {
   background-color: #faf8f0;
 }
 
-.set-width {
-  width: 300px;
-  padding: 10px;
-}
-
 .extra-pad {
   padding-left: 20px;
 }
@@ -621,6 +616,22 @@ footer {
 
 .fix-height {
   overflow-y: hidden;
+}
+
+.set-width {
+  padding: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .set-width {
+    width: 300px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
